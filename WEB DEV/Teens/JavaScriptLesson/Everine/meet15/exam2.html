@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Username and Password Generator</title>
+  </head>
+  <body>
+    <h1>Username and Password Generator</h1>
+
+    <script>
+      // Step 1: Membuat variable dan array
+      const random = Math.floor(Math.random() * 10); // angka acak dari 0-9
+      const adjectives = [
+        "pretty",
+        "happy",
+        "bright",
+        "brave",
+        "calm",
+        "kind",
+        "lazy",
+        "quick",
+        "smart",
+        "strong",
+      ]; // kata sifat
+      const nouns = [
+        "butterfly",
+        "tiger",
+        "lion",
+        "eagle",
+        "fox",
+        "dog",
+        "cat",
+        "rabbit",
+        "bear",
+        "wolf",
+      ]; // kata benda
+      const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]; // simbol
+
+      let newUsername;
+      let newPassword;
+
+      // Step 2: Membuat function generate dengan parameter option
+      function generate(option) {
+        if (option === 1) {
+          // Menggabungkan adjective dan noun untuk username
+          newUsername = adjectives[random] + nouns[random];
+          console.log("Generated Username: " + newUsername);
+        } else if (option === 2) {
+          // Menggabungkan noun, random number, dan symbol untuk password
+          newPassword =
+            nouns[random].charAt(0).toUpperCase() +
+            nouns[random].slice(1) +
+            random +
+            symbols[random];
+          console.log("Generated Password: " + newPassword);
+        }
+      }
+
+      // Step 3: Membuat prompt untuk memilih opsi
+      let userOption;
+      do {
+        userOption = parseInt(
+          prompt(
+            "Choose an option: 1. Generate Username or 2. Generate Password"
+          )
+        );
+      } while (userOption !== 1 && userOption !== 2);
+
+      // Memanggil function generate berdasarkan opsi yang dipilih
+      generate(userOption);
+    </script>
+  </body>
+</html>

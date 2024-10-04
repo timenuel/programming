@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Header Style</title>
+        <style>
+            .header-logo{
+                float: left;
+                font-size: 36px;
+                padding: 5px 40px;
+            }
+
+            .header nav{
+                float: right;
+                font-size: 28px;
+                padding: 10px 40px;
+                font-weight: bold;
+            }
+
+            a{
+                text-decoration: none;
+            }
+            header{
+                background: linear-gradient(#5bffe9, #ffff00);
+                height: 60px;
+                /* display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 40px; */
+            }
+
+            /* main css */
+            .coding {
+                height: 300px;
+                margin-top: 200px;
+            }
+
+            .coding img {
+                float: left;
+                height: 300px;
+                width: 300px;
+                border-radius: 10%;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+
+            .coding p {
+                font-size: 25px;
+            }
+            .button2 {
+                background-color: wheat;
+                color: blueviolet;
+                border: 3px double blue;
+                padding: 10px 25px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 20px;
+                box-shadow: 0 6px 20px black;
+            }
+
+            .button2:hover {
+                background: linear-gradient(greenyellow, azure);
+                color: blue;
+            }
+
+            .contents {
+                height: 700px;
+                margin-top: 100px;
+                
+            }
+
+            .section-title {
+                font-size: 40px;
+                margin-bottom: 50px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .contents-item{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .contents-item h4 {
+                font-size: 26px;
+                margin-top: 30px;
+                width: 250px;
+                text-align: center;
+            }
+
+            .contents-item img {
+                height: 200px;
+                width: 200px;
+                border: 2px solid greenyellow;
+                border-radius: 20px;
+                padding: 20px;
+                background-color: white;
+            }
+
+            .contents-item img:hover {
+                background: linear-gradient(#26d0c9, #00ffaa);
+            }
+
+            .contents-item p {
+                font-size: 22px;
+                margin-top: 30px;
+                width: 250px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <!-- Tambahkan class header -->
+            <div class="header-logo">
+                My Website
+            </div>
+            <nav>
+                <a href=#>Home | </a>
+                <a href=#>About Me | </a>
+                <a href=#>Contact Me | </a>
+            </nav>
+         </header>
+         <main>
+            <div class="greeting">
+                <h1>Hello World</h1>
+                <h2>I am Cobee, Young Programmer</h2>
+            </div>
+            <div class="coding">
+                <p><img src="https://cdn.dribbble.com/users/330915/screenshots/3587000/10_coding_dribbble.gif" alt="">Your coding experience</p>
+                <button class="button2">See more</button>
+            </div>
+            <div class="contents">
+                <h3 class="section-title">
+                    What have I learn in Timedoor Coding Academy?
+                </h3>
+                <hr class="section-title">            
+                <div class="contents-item">
+                    <img src="literacy.png">
+                    <h4>
+                        Digital Literacy
+                    </h4>
+                    <p>
+                        Find out, identify, evaluate, and use information properly
+                    </p>
+                </div>            
+                <div class="contents-item">
+                    <img src="gamedev.png">
+                    <h4>
+                        Game Development
+                    </h4>
+                    <p>
+                        Learn to create and publish games using Scratch 3 and 
+                        Construct 3 Game Development tools
+                    </p>
+                </div>
+                <div class="contents-item">
+                    <img src="literacy.png">
+                    <h4>
+                        Digital Literacy
+                    </h4>
+                    <p>
+                        Find out, identify, evaluate, and use information properly
+                    </p>
+                </div>
+                <div class="contents-item">
+                    <img src="gamedev.png">
+                    <h4>
+                        Game Development
+                    </h4>
+                    <p>
+                        Learn to create and publish games using Scratch 3 and 
+                        Construct 3 Game Development tools
+                    </p>
+                </div>                
+            </div>
+         </main>
+    </body>
+</html>

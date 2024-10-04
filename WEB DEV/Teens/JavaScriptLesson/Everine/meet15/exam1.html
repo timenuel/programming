@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username and Password Generator</title>
+</head>
+<body>
+
+    <h1>Generate Username or Password</h1>
+    <script>
+        // Step 1
+        const random = Math.floor(Math.random() * 10);
+        const adjectives = ["quick", "happy", "brave", "smart", "lazy", "kind", "bright", "strong", "fast", "calm"];
+        const nouns = ["tiger", "eagle", "lion", "rabbit", "fox", "panda", "dog", "cat", "bear", "wolf"];
+        const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+        
+        let newUsername;
+        let newPassword;
+
+        // Step 2
+        function generate(option) {
+            if (option === 1) {
+                newUsername = adjectives[random] + nouns[random];
+                console.log("Generated Username: " + newUsername);
+            } else if (option === 2) {
+                newPassword = adjectives[random].toUpperCase() + nouns[random] + random + symbols[random];
+                console.log("Generated Password: " + newPassword);
+            }
+        }
+
+        // Step 3
+        let userOption;
+        do {
+            userOption = parseInt(prompt("Choose an option: 1. Generate Username or 2. Generate Password"));
+        } while (userOption !== 1 && userOption !== 2);
+
+        generate(userOption);
+
+    </script>
+
+</body>
+</html>

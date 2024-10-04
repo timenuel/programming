@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username and Password Generator</title>
+</head>
+<body>
+
+    <h1>Username and Password Generator</h1>
+
+    <script>
+        // Step 1: Membuat variabel dan array
+        const random = Math.floor(Math.random() * 10); // Angka acak dari 0-9
+        const adjectives = ["pretty", "quick", "smart", "brave", "strong", "happy", "calm", "kind", "bright", "fast"];
+        const nouns = ["butterfly", "tiger", "rabbit", "eagle", "lion", "panda", "fox", "dog", "cat", "bear"];
+        const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+        
+        let newUsername;
+        let newPassword;
+
+        // Step 2: Function generate dengan parameter option
+        function generate(option) {
+            if (option === 1) {
+                // Generate username: adjective + noun
+                newUsername = adjectives[random] + nouns[random];
+                document.write("Generated Username: " + newUsername + "<br>");
+            } else if (option === 2) {
+                // Generate password: noun (capitalized) + random number + random symbol
+                newPassword = nouns[random].charAt(0).toUpperCase() + nouns[random].slice(1) + random + symbols[random];
+                document.write("Generated Password: " + newPassword + "<br>");
+            }
+        }
+
+        // Step 3: Prompt user untuk memilih antara generate username atau password
+        let userOption;
+        do {
+            userOption = parseInt(prompt("Choose an option: 1. Generate Username or 2. Generate Password"));
+        } while (userOption !== 1 && userOption !== 2);
+
+        // Panggil function generate berdasarkan pilihan user
+        generate(userOption);
+
+    </script>
+
+</body>
+</html>

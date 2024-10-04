@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username and Password Generator</title>
+</head>
+<body>
+
+    <h1>Username and Password Generator</h1>
+
+    <script>
+        // Step 1: Membuat variabel dan array
+        // --------------------------------------------------------------
+        // Math.random() dan Math.floor()
+        // Math.random() menghasilkan angka acak antara 0 hingga 1.
+        // Math.floor() digunakan untuk membulatkan angka ke bawah, jadi di sini menghasilkan angka bulat acak antara 0-9.
+        const random = Math.floor(Math.random() * 10); 
+        
+        // Array (adjectives, nouns, symbols)
+        // Array adalah struktur data yang menyimpan beberapa nilai dalam satu variabel.
+        // Array adjectives dan nouns masing-masing berisi 10 kata sifat dan kata benda.
+        const adjectives = ["pretty", "quick", "smart", "brave", "strong", "happy", "calm", "kind", "bright", "fast"];
+        const nouns = ["butterfly", "tiger", "rabbit", "eagle", "lion", "panda", "fox", "dog", "cat", "bear"];
+        const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+        
+        // Variabel untuk menyimpan hasil yang akan di-generate nanti
+        // Variabel ini akan diisi di dalam fungsi generate()
+        let newUsername; 
+        let newPassword;
+
+        // Step 2: Membuat fungsi generate dengan parameter option
+        // --------------------------------------------------------------
+        // Function
+        // Fungsi adalah blok kode yang dapat digunakan kembali. Fungsi 'generate' di sini menerima satu parameter 'option'
+        function generate(option) {
+            // Conditional statement (if-else)
+            // Digunakan untuk memeriksa kondisi. Di sini memeriksa apakah option sama dengan 1 atau 2.
+            if (option === 1) {
+                // Concatenation (penggabungan string)
+                // Menggabungkan elemen array adjectives dan nouns untuk membuat username.
+                newUsername = adjectives[random] + nouns[random]; 
+                
+                // console.log() - Debugging
+                // Menampilkan nilai newUsername di console browser (developer tools).
+                console.log("Generated Username: " + newUsername);
+                
+                // document.write() - Output di halaman
+                // Menampilkan hasil di halaman browser.
+                document.write("Generated Username: " + newUsername + "<br>");
+            } else if (option === 2) {
+                // Uppercase (charAt dan slice)
+                // charAt(0) mengambil karakter pertama dari string, lalu toUpperCase() membuatnya kapital.
+                // slice(1) mengambil sisa karakter dari string, mulai dari indeks ke-1.
+                newPassword = nouns[random].charAt(0).toUpperCase() + nouns[random].slice(1) + random + symbols[random];
+                
+                // console.log() - Debugging
+                // Menampilkan nilai newPassword di console browser (developer tools).
+                console.log("Generated Password: " + newPassword);
+                
+                // document.write() - Output di halaman
+                // Menampilkan hasil di halaman browser.
+                document.write("Generated Password: " + newPassword + "<br>");
+            }
+        }
+
+        // Step 3: Prompt user untuk memilih antara generate username atau password
+        // --------------------------------------------------------------
+        // Prompt
+        // Prompt adalah metode interaktif yang meminta input dari pengguna di jendela pop-up.
+        let userOption;
+
+        // Do-While loop
+        // Loop yang menjalankan blok kode setidaknya satu kali sebelum memeriksa kondisi.
+        // Digunakan untuk terus meminta input dari pengguna hingga input valid (1 atau 2).
+        do {
+            // parseInt() - Mengonversi input string dari prompt menjadi integer.
+            userOption = parseInt(prompt("Choose an option: 1. Generate Username or 2. Generate Password"));
+        } while (userOption !== 1 && userOption !== 2); // Loop terus berjalan selama input bukan 1 atau 2.
+
+        // Function Call
+        // Memanggil fungsi generate() dan mengirimkan userOption sebagai argumen.
+        generate(userOption);
+
+    </script>
+
+</body>
+</html>

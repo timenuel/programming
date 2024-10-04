@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Length Converter</title>
+  </head>
+  <body>
+    <h1>Length Converter</h1>
+
+    <script>
+      // Function to convert cm to meter
+      function cmToMeter(cm) {
+        var m = cm * 0.01;
+        return "${cm} cm is ${m} meter";
+      }
+
+      // Function to convert cm to kilometer
+      function cmToKilometer(cm) {
+        var km = cm / 100000;
+        return "${cm} cm is ${km} kilometer";
+      }
+
+      // Function to convert cm to millimeter
+      function cmToMillimeter(cm) {
+        var mm = cm * 10;
+        return "${cm} cm is ${mm} millimeter";
+      }
+
+      // Test the functions
+      console.log(cmToMeter(100)); // Output: 100 cm is 1 meter
+      console.log(cmToKilometer(100000)); // Output: 100000 cm is 1 kilometer
+      console.log(cmToMillimeter(100)); // Output: 100 cm is 1000 millimeter
+    </script>
+  </body>
+</html>
